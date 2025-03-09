@@ -58,7 +58,15 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
         return {};
     }
     
-    queue<vector<string>> ladder_queue;
+    
+    auto compare = [](const vector<string>& a, const vector<string>& b) {
+        if (a.size() != b.size()) {
+            return a.size() > b.size(); 
+        }
+        return a.back() > b.back(); 
+    };
+    
+    priority_queue<vector<string>, vector<vector<string>>, decltype(compare)> ladder_queue(compare);
     ladder_queue.push({begin_word});
     
     set<string> visited;
@@ -67,7 +75,7 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
     const int MAX_LADDER_LENGTH = 20;
     
     while (!ladder_queue.empty()) {
-        vector<string> ladder = ladder_queue.front();
+        vector<string> ladder = ladder_queue.top();
         ladder_queue.pop();
         
         if (ladder.size() > MAX_LADDER_LENGTH) {
@@ -76,6 +84,11 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
         
         string last_word = ladder.back();
         
+        if (last_word == end_word) {
+            return ladder;
+        }
+        
+
         for (size_t i = 0; i < last_word.length(); i++) {
             string new_word = last_word;
             for (char c = 'a'; c <= 'z'; c++) {
@@ -85,14 +98,11 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
                     vector<string> new_ladder = ladder;
                     new_ladder.push_back(new_word);
                     
-                    if (new_word == end_word) {
-                        return new_ladder;
-                    }
-                    
                     ladder_queue.push(new_ladder);
                 }
             }
         }
+        
         
         for (size_t i = 0; i <= last_word.length(); i++) {
             string new_word = last_word;
@@ -104,15 +114,12 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
                     vector<string> new_ladder = ladder;
                     new_ladder.push_back(new_word);
                     
-                    if (new_word == end_word) {
-                        return new_ladder;
-                    }
-                    
                     ladder_queue.push(new_ladder);
                 }
             }
         }
         
+       
         for (size_t i = 0; i < last_word.length(); i++) {
             string new_word = last_word;
             new_word.erase(i, 1);
@@ -120,10 +127,6 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
                 visited.insert(new_word);
                 vector<string> new_ladder = ladder;
                 new_ladder.push_back(new_word);
-                
-                if (new_word == end_word) {
-                    return new_ladder;
-                }
                 
                 ladder_queue.push(new_ladder);
             }
