@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "HW9",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "dijkstra_main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dijkstra_main-Debug-22b69e3737005dc49c12.json",
+					"name" : "dijkstra_main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ladder_main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ladder_main-Debug-fbd38d14978429ff3f30.json",
+					"name" : "ladder_main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "student_gtests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-student_gtests-Debug-3faeed575ed0b86d80b9.json",
+					"name" : "student_gtests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+		"source" : "/Users/jxh/Desktop/ics-46-hw-9-junxioh"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

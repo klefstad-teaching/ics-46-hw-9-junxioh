@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++   -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/dijkstra_main.dir/src/dijkstras.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/src/dijkstras.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/src/dijkstras.cpp",
+  "output": "CMakeFiles/dijkstra_main.dir/src/dijkstras.cpp.o"
+},
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++   -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/dijkstra_main.dir/src/dijkstras_main.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/src/dijkstras_main.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/src/dijkstras_main.cpp",
+  "output": "CMakeFiles/dijkstra_main.dir/src/dijkstras_main.cpp.o"
+},
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++   -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/ladder_main.dir/src/ladder.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/src/ladder.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/src/ladder.cpp",
+  "output": "CMakeFiles/ladder_main.dir/src/ladder.cpp.o"
+},
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++   -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/ladder_main.dir/src/ladder_main.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/src/ladder_main.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/src/ladder_main.cpp",
+  "output": "CMakeFiles/ladder_main.dir/src/ladder_main.cpp.o"
+},
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/Users/jxh/Desktop/ics-46-hw-9-junxioh/src -isystem /opt/miniconda3/include -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/student_gtests.dir/gtest/gtestmain.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/gtest/gtestmain.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/gtest/gtestmain.cpp",
+  "output": "CMakeFiles/student_gtests.dir/gtest/gtestmain.cpp.o"
+},
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/Users/jxh/Desktop/ics-46-hw-9-junxioh/src -isystem /opt/miniconda3/include -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/student_gtests.dir/gtest/student_gtests.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/gtest/student_gtests.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/gtest/student_gtests.cpp",
+  "output": "CMakeFiles/student_gtests.dir/gtest/student_gtests.cpp.o"
+},
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/Users/jxh/Desktop/ics-46-hw-9-junxioh/src -isystem /opt/miniconda3/include -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/student_gtests.dir/src/dijkstras.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/src/dijkstras.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/src/dijkstras.cpp",
+  "output": "CMakeFiles/student_gtests.dir/src/dijkstras.cpp.o"
+},
+{
+  "directory": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/build",
+  "command": "/usr/bin/clang++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/Users/jxh/Desktop/ics-46-hw-9-junxioh/src -isystem /opt/miniconda3/include -Wall -Wextra -Wpedantic -Wfatal-errors -Werror=vla -glldb -g -std=c++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -o CMakeFiles/student_gtests.dir/src/ladder.cpp.o -c /Users/jxh/Desktop/ics-46-hw-9-junxioh/src/ladder.cpp",
+  "file": "/Users/jxh/Desktop/ics-46-hw-9-junxioh/src/ladder.cpp",
+  "output": "CMakeFiles/student_gtests.dir/src/ladder.cpp.o"
+}
+]
