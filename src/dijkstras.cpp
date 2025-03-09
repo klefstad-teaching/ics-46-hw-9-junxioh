@@ -18,10 +18,8 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
     previous.resize(n, -1);
     vector<bool> visited(n, false);
     
-
     priority_queue<Node, vector<Node>, greater<Node>> pq;
     
-
     pq.push(Node(source, 0));
     distance[source] = 0;
     
@@ -31,18 +29,15 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
         
         int u = current.vertex;
         
-       
         if (visited[u]) {
             continue;
         }
         
         visited[u] = true;
         
-      
         for (const Edge& edge : G[u]) {
             int v = edge.dst;
             int weight = edge.weight;
-            
             
             if (!visited[v] && distance[u] != INF && distance[u] + weight < distance[v]) {
                 distance[v] = distance[u] + weight;
@@ -57,7 +52,6 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
 
 vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination) {
     vector<int> path;
-    
     
     if (previous[destination] == -1) {
         return path;
@@ -74,7 +68,8 @@ vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector
 
 void print_path(const vector<int>& path, int total) {
     if (path.empty()) {
-        cout << "No path exists" << endl;
+        cout << endl;
+        cout << "Total cost is " << total << endl;
         return;
     }
     
@@ -84,6 +79,6 @@ void print_path(const vector<int>& path, int total) {
             cout << " ";
         }
     }
-    cout << endl;
+    cout << " " << endl;
     cout << "Total cost is " << total << endl;
 }

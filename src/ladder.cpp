@@ -13,9 +13,10 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
     
     int m = str1.size();
     int n = str2.size();
-
+    
     if (m == 0) return n <= d;
     if (n == 0) return m <= d;
+    
     vector<vector<int>> dp(m + 1, vector<int>(n + 1));
     
     for (int i = 0; i <= m; i++) {
@@ -31,9 +32,9 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
             if (str1[i - 1] == str2[j - 1]) {
                 dp[i][j] = dp[i - 1][j - 1];
             } else {
-                dp[i][j] = 1 + min({dp[i - 1][j],     
-                                    dp[i][j - 1],     
-                                    dp[i - 1][j - 1]  
+                dp[i][j] = 1 + min({dp[i - 1][j],
+                                    dp[i][j - 1],
+                                    dp[i - 1][j - 1]
                                    });
             }
         }
@@ -51,35 +52,40 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
         error(begin_word, end_word, "Start and end words are the same!");
         return {};
     }
- 
+    
     if (word_list.find(end_word) == word_list.end()) {
         error(begin_word, end_word, "End word is not in the dictionary!");
         return {};
     }
     
-
     queue<vector<string>> ladder_queue;
     ladder_queue.push({begin_word});
     
     set<string> visited;
     visited.insert(begin_word);
     
-
+    const int MAX_LADDER_LENGTH = 20;
+    
     while (!ladder_queue.empty()) {
         vector<string> ladder = ladder_queue.front();
         ladder_queue.pop();
         
+        if (ladder.size() > MAX_LADDER_LENGTH) {
+            continue;
+        }
+        
         string last_word = ladder.back();
-    
-        for (const string& word : word_list) {
-            if (is_adjacent(last_word, word)) {
-                if (visited.find(word) == visited.end()) {
-                    visited.insert(word);
-                    
+        
+        for (size_t i = 0; i < last_word.length(); i++) {
+            string new_word = last_word;
+            for (char c = 'a'; c <= 'z'; c++) {
+                new_word[i] = c;
+                if (word_list.find(new_word) != word_list.end() && visited.find(new_word) == visited.end()) {
+                    visited.insert(new_word);
                     vector<string> new_ladder = ladder;
-                    new_ladder.push_back(word);
+                    new_ladder.push_back(new_word);
                     
-                    if (word == end_word) {
+                    if (new_word == end_word) {
                         return new_ladder;
                     }
                     
@@ -87,8 +93,42 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
                 }
             }
         }
+        
+        for (size_t i = 0; i <= last_word.length(); i++) {
+            string new_word = last_word;
+            new_word.insert(i, 1, ' ');
+            for (char c = 'a'; c <= 'z'; c++) {
+                new_word[i] = c;
+                if (word_list.find(new_word) != word_list.end() && visited.find(new_word) == visited.end()) {
+                    visited.insert(new_word);
+                    vector<string> new_ladder = ladder;
+                    new_ladder.push_back(new_word);
+                    
+                    if (new_word == end_word) {
+                        return new_ladder;
+                    }
+                    
+                    ladder_queue.push(new_ladder);
+                }
+            }
+        }
+        
+        for (size_t i = 0; i < last_word.length(); i++) {
+            string new_word = last_word;
+            new_word.erase(i, 1);
+            if (word_list.find(new_word) != word_list.end() && visited.find(new_word) == visited.end()) {
+                visited.insert(new_word);
+                vector<string> new_ladder = ladder;
+                new_ladder.push_back(new_word);
+                
+                if (new_word == end_word) {
+                    return new_ladder;
+                }
+                
+                ladder_queue.push(new_ladder);
+            }
+        }
     }
-
     
     error(begin_word, end_word, "No word ladder exists between these words!");
     return {};
@@ -132,7 +172,7 @@ void print_word_ladder(const vector<string>& ladder) {
 void verify_word_ladder() {
     set<string> word_list;
     load_words(word_list, "words.txt");
-
+    
     #define my_assert(e) {cout << #e << ((e) ? " passed": " failed") << endl;}
     
     my_assert(generate_word_ladder("cat", "dog", word_list).size() == 4);
