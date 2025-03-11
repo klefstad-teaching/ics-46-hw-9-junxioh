@@ -88,7 +88,7 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
             return ladder;
         }
         
-
+       
         for (size_t i = 0; i < last_word.length(); i++) {
             string new_word = last_word;
             for (char c = 'a'; c <= 'z'; c++) {
@@ -103,12 +103,11 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
             }
         }
         
-        
+      
         for (size_t i = 0; i <= last_word.length(); i++) {
-            string new_word = last_word;
-            new_word.insert(i, 1, ' ');
             for (char c = 'a'; c <= 'z'; c++) {
-                new_word[i] = c;
+                string new_word = last_word;
+                new_word.insert(i, 1, c);  
                 if (word_list.find(new_word) != word_list.end() && visited.find(new_word) == visited.end()) {
                     visited.insert(new_word);
                     vector<string> new_ladder = ladder;
@@ -119,7 +118,7 @@ vector<string> generate_word_ladder(const string& begin_word, const string& end_
             }
         }
         
-       
+        // Delete one character at a time
         for (size_t i = 0; i < last_word.length(); i++) {
             string new_word = last_word;
             new_word.erase(i, 1);
